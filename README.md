@@ -18,22 +18,31 @@ While OpenList provides an excellent standard WebUI, this project brings a true 
 
 ## 🚀 Deployment
 
-### Option 1: Docker (Recommended)
+### Option 1: Docker Compose (Recommended)
 
-The easiest way to deploy the application is using Docker.
+The easiest and most modern way to deploy the application is using Docker Compose.
 
 ```bash
 # 1. Clone the repository
 git clone https://github.com/YourUsername/openlist-cli-web.git
 cd openlist-cli-web
 
-# 2. Build the Docker image
-docker build -t openlist-cli .
-
-# 3. Run the container
-docker run -d -p 3000:3000 --name openlist-cli openlist-cli
+# 2. Run the application
+docker-compose up -d
 ```
-The CLI will now be available at `http://localhost:3000`.
+The CLI will now be available at `http://localhost:3000`. To stop the application, run `docker-compose down`.
+
+### Option 2: Docker (Manual Build)
+
+If you prefer using plain Docker without Compose:
+
+```bash
+# 1. Build the Docker image
+docker build -t openlist-cli-web .
+
+# 2. Run the container
+docker run -d -p 3000:3000 --name openlist-cli openlist-cli-web
+```
 
 ### Option 2: Manual Node.js Deployment
 

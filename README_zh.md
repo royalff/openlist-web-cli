@@ -18,22 +18,31 @@
 
 ## 🚀 部署教程 (Deployment)
 
-### 方案 1: 使用 Docker 部署 (推荐)
+### 方案 1: 使用 Docker Compose 部署 (强烈推荐)
 
-最简单、最干净的部署方式。
+这是最简单、最现代的自动化部署方式。
 
 ```bash
 # 1. 克隆代码库
 git clone https://github.com/YourUsername/openlist-cli-web.git
 cd openlist-cli-web
 
-# 2. 构建 Docker 镜像
-docker build -t openlist-cli .
-
-# 3. 运行容器
-docker run -d -p 3000:3000 --name openlist-cli openlist-cli
+# 2. 一键启动服务
+docker-compose up -d
 ```
-部署完成后，浏览器访问 `http://localhost:3000` 即可使用。
+部署完成后，浏览器访问 `http://localhost:3000` 即可使用。如果需要停止服务，请执行 `docker-compose down`。
+
+### 方案 2: 使用纯 Docker 手动构建
+
+如果你没有安装 Compose 或者更喜欢纯 Docker 指令：
+
+```bash
+# 1. 构建 Docker 镜像
+docker build -t openlist-cli-web .
+
+# 2. 运行容器
+docker run -d -p 3000:3000 --name openlist-cli openlist-cli-web
+```
 
 ### 方案 2: Node.js 手动部署
 
