@@ -1,0 +1,6 @@
+{
+  "name": "OpenList CLI",
+  "description": "A web-based command-line interface for the OpenList file manager API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
